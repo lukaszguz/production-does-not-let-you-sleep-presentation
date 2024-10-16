@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    
+    <link href="revealjs/dist/reveal.css" rel="stylesheet">
+    <link href="revealjs/dist/reset.css" rel="stylesheet">
+    <link href="revealjs/dist/theme/moon.css" id="theme" rel="stylesheet">
+    <link href="revealjs/plugin/highlight/monokai.css" id="highlight-theme" rel="stylesheet">
+    <link href="revealjs/plugin/copycode/copycode.css" rel="stylesheet">
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    
+    <style media="screen" type="text/css">
+			/* These CSS settings are embedded directly in the presentation html */
+		
+			/* This prevents auto-capitalization of headers */
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6 {
+			    text-transform: none;
+			}
+		
+			a.top-left {
+			    position: absolute;
+			    z-index: 1;
+			    width: clamp(50px, 8vmax, 80px);
+			    line-height: 0;
+			    color: rgba(255, 255, 255, 0.5);
+			}
+		
+			a.top-left path {
+			    fill: #258bd2;
+			}
+		
+			a.top-left:hover {
+			    color: white;
+			}
+		
+			a.top-right {
+			    position: absolute;
+			    top: 15px;
+			    right: 15px;
+			    z-index: 1;
+			}
+		
+			.hljs {
+			    color: #adbac7;
+			    background: #22272e;
+			}
+		
+			.hljs-doctag,
+			.hljs-keyword,
+			.hljs-meta .hljs-keyword,
+			.hljs-template-tag,
+			.hljs-template-variable,
+			.hljs-type,
+			.hljs-variable.language_ {
+			    /* prettylights-syntax-keyword */
+			    color: #f47067;
+			}
+		
+			.hljs-title,
+			.hljs-title.class_,
+			.hljs-title.class_.inherited__,
+			.hljs-title.function_ {
+			    /* prettylights-syntax-entity */
+			    color: #dcbdfb;
+			}
+		
+			.hljs-attr,
+			.hljs-attribute,
+			.hljs-literal,
+			.hljs-meta,
+			.hljs-number,
+			.hljs-operator,
+			.hljs-variable,
+			.hljs-selector-attr,
+			.hljs-selector-class,
+			.hljs-selector-id {
+			    /* prettylights-syntax-constant */
+			    color: #6cb6ff;
+			}
+		
+			.hljs-regexp,
+			.hljs-string,
+			.hljs-meta .hljs-string {
+			    /* prettylights-syntax-string */
+			    color: #96d0ff;
+			}
+		
+			.hljs-built_in,
+			.hljs-symbol {
+			    /* prettylights-syntax-variable */
+			    color: #f69d50;
+			}
+		
+			.hljs-comment,
+			.hljs-code,
+			.hljs-formula {
+			    /* prettylights-syntax-comment */
+			    color: #768390;
+			}
+		
+			.hljs-name,
+			.hljs-quote,
+			.hljs-selector-tag,
+			.hljs-selector-pseudo {
+			    /* prettylights-syntax-entity-tag */
+			    color: #8ddb8c;
+			}
+		
+			.hljs-subst {
+			    /* prettylights-syntax-storage-modifier-import */
+			    color: #adbac7;
+			}
+		
+			.hljs-section {
+			    /* prettylights-syntax-markup-heading */
+			    color: #316dca;
+			    font-weight: bold;
+			}
+		
+			.hljs-bullet {
+			    /* prettylights-syntax-markup-list */
+			    color: #eac55f;
+			}
+		
+			.hljs-emphasis {
+			    /* prettylights-syntax-markup-italic */
+			    color: #adbac7;
+			    font-style: italic;
+			}
+		
+			.hljs-strong {
+			    /* prettylights-syntax-markup-bold */
+			    color: #adbac7;
+			    font-weight: bold;
+			}
+		
+			.hljs-addition {
+			    /* prettylights-syntax-markup-inserted */
+			    color: #b4f1b4;
+			    background-color: #1b4721;
+			}
+		
+			.hljs-deletion {
+			    /* prettylights-syntax-markup-deleted */
+			    color: #ffd8d3;
+			    background-color: #78191b;
+			}
+		
+			.hljs-char.escape_,
+			.hljs-link,
+			.hljs-params,
+			.hljs-property,
+			.hljs-punctuation,
+			.hljs-tag {
+			    /* purposely ignored */
+			}
+		</style>
+    
+    <style media="screen" type="text/css">
+			#githubCorner path {
+			  fill: #258BD2;
+			}
+			
+			#ghsrc {
+			  font-size: 30px;
+			  text-decoration: underline;
+			}
+			img[alt=revealjs-image] {
+			  width: 1000px;
+			}
+			.scrollable {
+			  bottom: 0px;
+			  overflow-y: auto  !important;
+			  overflow-x: hidden !important;
+			}
+			.background-wheat {
+			    background: wheat;
+			}
+			img[alt=change-postgres-cluster] {
+			    max-width: 70%;
+			}
+			.reveal-viewport {
+			    background-image: url(images-blur/logos/e1s.png),url(images-blur/logos/LublinJUG_logo-01.png);
+			    background-size: 8%, 4%;
+			    background-repeat: no-repeat;
+			    background-position: 97% 3%, 88% 2%;
+			}
+			
+		</style>
+    
+  </head>
+  <body>
+    <div class="reveal">
+      
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Production doesn't let you sleep, a quarter of the fight for a better tomorrow</h2>
+          </section>
+          
+          <section>
+            <h2>Context</h2>
+          </section>
+          
+        </section>
+        
+        <section>
+          <section>
+            <h1>Adventory has problems!</h1>
+          </section>
+          
+          <section data-auto-animate="">
+            <h2>Ring! Ring!</h2>
+          </section>
+          
+          <section data-auto-animate="">
+            <h2>Ring! Ring!</h2>
+            <img src="images-blur/adventory-call.png">
+          </section>
+          
+          <section>
+            <h2>Kowalski analysis!</h2>
+            <img src="images-blur/kowalski_analysis.jpg">
+          </section>
+          
+          <section>
+            <h2>Memory App</h2>
+            <img src="images-blur/adventory-memory-before.png">
+          </section>
+          
+          <section>
+            <h2>JVM Heap</h2>
+            <img src="images-blur/adventory-heap_before.png">
+          </section>
+          
+        </section>
+        
+        <section>
+          <section>
+            <h1>Off-heap is a problem</h1>
+          </section>
+          
+          <section class="scrollable">
+            <div>
+              <img alt="jxray-offheap-2023-02-12" src="images-blur/jxray-offheap-2023-02-12.png">
+            </div>
+          </section>
+          
+          <section>
+            <h1>What is DirectByteBuffer?</h1>
+          </section>
+          
+          <section>
+            <h3>DirectByteBuffer</h3>
+            <p>The contents of direct buffers may reside outside of the normal garbage-collected heap, and so their impact upon the memory footprint of an application might not be obvious. It is therefore recommended that direct buffers be allocated primarily for large, long-lived buffers that are subject to the underlying system's native I/O operations.</p>
+            <p>
+              <small>~https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/ByteBuffer.html</small>
+            </p>
+          </section>
+          
+          <section class="scrollable" data-transition="none">
+            <div>
+              <img alt="jxray-offheap-2023-02-12" src="images-blur/jxray-offheap-2023-02-12.png">
+            </div>
+          </section>
+          
+          <section class="scrollable" data-transition="none">
+            <div>
+              <img alt="jxray-offheap-2023-02-12" src="images-blur/jxray-offheap-2023-02-12-marked.png">
+            </div>
+          </section>
+          
+          <section class="scrollable" data-auto-animate="">
+            <div>
+              <img src="images-blur/listOfDirectBuffers.png">
+            </div>
+          </section>
+          
+          <section data-transition="none">
+            <img src="images-blur/incoming-reference-to_directbuffer.png">
+          </section>
+          
+          <section data-transition="none">
+            <img src="images-blur/incoming-reference-to_directbuffer-marked.png">
+          </section>
+          
+          <section data-auto-animate="" data-transition="none">
+            <img src="images-blur/thread_details.png">
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" style="width: 1000px;">
+            <script type="text/template">
+## What are the threads called?
+```java
+new DefaultConnectingIOReactor(
+    IOReactorConfig.custom()
+        .setIoThreadCount(elasticSearchProperties.getIoThreadCount())
+        .build()
+    }
+)
+```
+</script>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" style="width: 1000px;">
+            <script type="text/template">
+## Answer
+```java [|5]
+static class DefaultThreadFactory implements ThreadFactory {
+    //...
+    @Override
+    public Thread newThread(final Runnable r) {
+        return new Thread(r, "I/O dispatcher " +
+        COUNT.getAndIncrement());
+    }
+}
+```
+</script>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" style="width: 1100px;">
+            <script type="text/template">
+## Our name
+```java [|5-11|9|3]
+new DefaultConnectingIOReactor(
+    IOReactorConfig.custom()
+        .setIoThreadCount(elasticSearchProperties.getIoThreadCount())
+        .build(),
+    new ThreadFactory() {
+        private final static AtomicLong COUNT = new AtomicLong(1);
+        @Override
+        public Thread newThread(@NotNull Runnable r) {
+            return new Thread(r, "I/O elasticsearch " +
+            COUNT.getAndIncrement());
+        }
+    }
+)
+```
+</script>
+          </section>
+          
+          <section>
+            <h2>Result</h2>
+            <img alt="adventory-memory-before" src="images-blur/adventory-memory-after.png">
+          </section>
+          
+        </section>
+        
+        <section>
+          <section>
+            <h1>Aggregator has problems!</h1>
+          </section>
+          
+          <section data-auto-animate="">
+            <h2>Ring! Ring!</h2>
+          </section>
+          
+          <section data-auto-animate="">
+            <h2>Ring! Ring! Ring! Ring! Ring! ...</h2>
+            <img src="images-blur/aggregator/aggregator-pagerduty-report.png">
+          </section>
+          
+          <section>
+            <h2>Kowalski analysis!</h2>
+            <img src="images-blur/kowalski_analysis.jpg">
+          </section>
+          
+        </section>
+        
+        <section>
+          <section>
+            <h2>Lots of app restarts</h2>
+            <img src="images-blur/aggregator/aggregator-restart-alert.png">
+          </section>
+          
+          <section>
+            <h3>Firstly. Where are the metrics?</h3>
+            <div>
+              <img src="images-blur/aggregator/aggregator-missing-metrics.png">
+            </div>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" style="width: 1200px;">
+            <script type="text/template">
+```kotlin
+@PostConstruct
+fun registerMetrics() {
+    registerGauge("stats.all", EntityGroupsStats::numberOfEntityGroups)
+    registerGauge("stats.active", EntityGroupsStats::numberOfActiveEntityGroups)
+    registerGauge("stats.units.active", EntityGroupsStats::numberOfActiveUnits)
+}
+```
+</script>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+```sql
+SELECT
+    STATUS,
+    COUNT(*) AS NUMBER_OF_ENTITY_GROUPS,
+    SUM(UNITS_COUNT) AS NUMBER_OF_UNITS
+FROM ENTITY_GROUPS GROUP BY STATUS
+```
+</script>
+          </section>
+          
+          <section>
+            <h3>The database is busy and we are doing 'metrics'</h3>
+            <div>
+              <img src="images-blur/aggregator/postgres-timeouts.png">
+            </div>
+          </section>
+          
+          <section data-auto-animate="" data-transition="none">
+            <h3>Solution</h3>
+            <p>Deleting these metrics unblocked the metrics publishing thread.</p>
+          </section>
+          
+          <section data-auto-animate="" data-transition="none">
+            <h3>Solution</h3>
+            <p>Deleting these metrics unblocked the metrics publishing thread.</p>
+            <h4>Metrics came back!</h4>
+          </section>
+          
+          <section>
+            <h2>The service did not respond to health checks</h2>
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-34-1.svg">
+            </div>
+          </section>
+          
+          <section class="scrollable">
+            <h2>Response time</h2>
+            <div>
+              <img src="images-blur/aggregator/aggregator-long-time-response.png">
+            </div>
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-36-1.svg" style="background: wheat;">
+            </div>
+            <div>
+              <img src="diagrams/slide-36-2.svg" style="background: wheat;">
+            </div>
+          </section>
+          
+          <section>
+            <h2>Bulkhead Pattern</h2>
+            <img alt="https://aws.amazon.com/blogs/containers/building-a-fault-tolerant-architecture-with-a-bulkhead-pattern-on-aws-app-mesh/" src="images-blur/aggregator/bulkhead/bulkhead-ship.png">
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-34-1.svg">
+            </div>
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-39-1.svg" style="background: wheat;">
+            </div>
+            <div>
+              <img src="diagrams/slide-39-2.svg" style="background: wheat;">
+            </div>
+            <div>
+              <img src="diagrams/slide-39-3.svg" style="background: wheat;">
+            </div>
+          </section>
+          
+          <section>
+            <img src="images-blur/aggregator/bulkhead/thread-pools-utilization.png">
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+## What do we have? 📝
+* We see metrics 
+              <!-- .element: class="fragment fade-left" -->
+* The application doesn't restart 
+              <!-- .element: class="fragment fade-left" -->
+* We have a bulkhead pattern and we can control the number of database connections for thread pools 
+              <!-- .element: class="fragment fade-left" -->
+* We added retention to our tables 
+              <!-- .element: class="fragment fade-left" -->
+* We have changed our approach from find-and-save an entity to upsert row 
+              <!-- .element: class="fragment fade-left" -->
+* The application still doesn't work 
+              <!-- .element: class="fragment fade-left" -->
+</script>
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+# The database is a problem
+</script>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+## Time to change db server!
+</script>
+          </section>
+          
+          <section>
+            <div>
+              <img alt="change-postgres-cluster" src="images-blur/aggregator/change-postgres-cluster.png">
+            </div>
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+## And ...
+</script>
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+## And ...
+# Nothing has changed 😂
+</script>
+          </section>
+          
+          <section>
+            <img alt="aggregator-metric-before" src="images-blur/aggregator/aggregator-metric-before.png">
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+# Why?
+</script>
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+## Updating the index in random places is really expensive for db.
+</script>
+          </section>
+          
+        </section>
+        
+        <section>
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+## Solution
+</script>
+          </section>
+          
+          <section data-auto-animate="" data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="" data-transition="none">
+            <script type="text/template">
+## Quasi-CQRS
+</script>
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-52-1.svg" style="background: wheat;">
+            </div>
+          </section>
+          
+          <section>
+            <div>
+              <img src="diagrams/slide-54-1.svg" style="background: wheat;">
+            </div>
+          </section>
+          
+        </section>
+        
+        <section>
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+## Takeaways
+- If something doesn't work, it won't fix itself. Fix it or find someone to fix it.
+              <!-- .element: class="fragment fade-left" -->
+   - Our team has changed the way we respond to false positive alerts 
+              <!-- .element: class="fragment fade-left" -->
+- Many alerts are created wishfully 
+              <!-- .element: class="fragment fade-left" -->
+</script>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+## Takeaways ...
+- It's not worth maintaining alerts that calls in the middle of the night and you can do anything with them 
+              <!-- .element: class="fragment fade-left" -->
+- A permanent code review partner guarantees optimal speed 
+              <!-- .element: class="fragment fade-left" -->
+- Without metrics and charts, it is impossible to convince business people 
+              <!-- .element: class="fragment fade-left" -->
+</script>
+          </section>
+          
+        </section>
+        
+        <section>
+          <section>
+            <h2>References</h2>
+            <p>
+              <ul style="font-size: 25px;">
+                <li>
+                  <a href="https://jxray.com">JxRay</a>
+                </li>
+                <li>
+                  <a href="https://eclipse.dev/mat">Memory Analyzer (MAT)</a>
+                </li>
+                <li>
+                  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/ByteBuffer.html">ByteBuffer</a>
+                </li>
+                <li>
+                  <a href="https://www.mastertheboss.com/java/troubleshooting-outofmemoryerror-direct-buffer-memory">Troubleshooting OutOfMemoryError: Direct buffer memory</a>
+                </li>
+                <li>
+                  <a href="https://dzone.com/articles/troubleshooting-problems-with-native-off-heap-memo">Troubleshooting Problems With Native (Off-Heap) Memory in Java Applications</a>
+                </li>
+                <li>
+                  <a href="https://innovation.ebayinc.com/tech/engineering/sre-case-study-triage-a-non-heap-jvm-out-of-memory-issue">SRE Case Study: Triaging a Non-Heap JVM Out of Memory Issue</a>
+                </li>
+                <li>
+                  <a href="https://resilience4j.readme.io/docs/bulkhead">Bulkhead</a>
+                </li>
+                <li>
+                  <a href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-upsert">PostgreSQL UPSERT using INSERT ON CONFLICT Statement</a>
+                </li>
+                <li>
+                  <a href="https://martinfowler.com/bliki/CQRS.html">CQRS</a>
+                </li>
+              </ul>
+            </p>
+          </section>
+          
+          <section data-markdown="" data-separator="" data-separator-notes="^Notes?:" data-separator-vertical="">
+            <script type="text/template">
+# Thank you!
+</script>
+          </section>
+          
+        </section>
+        
+      </div>
+    </div>
+    	
+	<script src="revealjs/dist/reveal.js"></script>
+	<script src="revealjs/plugin/zoom/zoom.js"></script>
+	<script src="revealjs/plugin/search/search.js"></script>
+	<script src="revealjs/plugin/markdown/markdown.js"></script>
+	<script src="revealjs/plugin/highlight/highlight.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+	<script src="revealjs/plugin/copycode/copycode.js"></script>
+	<script src="revealjs/plugin/menu/menu.js"></script>
+
+	<script>
+		Reveal.initialize({
+			history: true,
+			transition: 'concave',
+			transitionSpeed: 'slow',
+
+			slideNumber: 'c/t',
+
+			scrollLayout: 'full',
+
+			scrollProgress: 'auto',
+
+			scrollActivationWidth: 1,
+
+			scrollSnap: 'mandatory',
+
+			menu: {
+				numbers: true
+			},
+			
+			copycode: {
+				timeout: 2000,
+				copy: 'Copy',
+				copied: 'Copied!'
+			},
+			
+			plugins: [ RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealMenu, CopyCode ]
+		});
+
+</script>
+  </body>
+</html>
+
