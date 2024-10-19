@@ -219,6 +219,11 @@ fun main() {
                             img {
                                 src = "${imgDir}/jxray-offheap-2023-02-12-marked.png"
                                 alt = "jxray-offheap-2023-02-12"
+                                /**
+                                 * Explanation
+                                 * Off-heap memory used by java.nio.DirectByteBuffers.  Size 941.4%  ( 898,569Kb )
+                                 * Percentage is a ration of [8. Off-heap memory used by java.nio.DirectByteBuffers (total size column)] divided by [1. Top-Level Stats (total column)]
+                                 */
                             }
                         }
                     }
