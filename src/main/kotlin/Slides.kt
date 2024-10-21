@@ -947,14 +947,17 @@ fun main() {
                         }
                     }
                 }
-                markdownSlide {
-                    content {
-                        """
-            # Thank you!
-            """
+                dslSlide {
+                  content {
+                    h1 { +"Thank you!" }
+                    div {
+                      img {
+                        src = "${imgDir}/presentation-qr-code.png"
+                        alt = "presentation-qrcode"
+                      }
                     }
+                  }
                 }
-
             }
         }
     }
