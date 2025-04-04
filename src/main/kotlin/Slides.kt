@@ -87,7 +87,7 @@ fun main() {
             max-width: 70%;
         }
         .reveal-viewport {
-            background-image: url(${imgDir}/logos/e1s.png),url(${imgDir}/logos/LublinJUG_logo-01.png);
+            background-image: url(${imgDir}/logos/xtb_logo.png);
             background-size: 8%, 4%;
             background-repeat: no-repeat;
             background-position: 97% 3%, 88% 2%;
