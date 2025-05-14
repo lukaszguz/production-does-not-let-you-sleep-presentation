@@ -2,7 +2,7 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/kslides/kslides-template)
 [![Build Status](https://app.travis-ci.com/kslides/kslides-template.svg?branch=master)](https://app.travis-ci.com/kslides/kslides-template)
-[![Kotlin version](https://img.shields.io/badge/kotlin-1.8.21-red?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin version](https://img.shields.io/badge/kotlin-2.1.0-red?logo=kotlin)](http://kotlinlang.org)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ed16ddd9-ab47-4e9d-8e37-807edded7a6e/deploy-status)](https://app.netlify.com/sites/kslides-template/deploys)
 
 A template repo for authoring [kslides](https://github.com/kslides/kslides) presentation.
@@ -39,7 +39,7 @@ Make sure to run `./gradlew clean build` after making changes to `/src/main/reso
 1) Go to your kslides content repo on GitHub 
 2) Click on _Settings_ -> _Pages_ 
 3) Under **Source**, choose the _master_ branch and the _/docs_ folder and click on _Save_
-4) Open the _src/main/kotlin/Slides.ht_ file
+4) Open the _src/main/kotlin/Slides.kt_ file
 5) Ensure the _output{}_ block contains: `enableFileSystem = true` 
 6) Click on the green arrow next to the `fun main()` declaration to run the program and generate the html content in the _/docs_ folder
 7) Add the newly generated html files in the `/docs` folder to git 
@@ -80,7 +80,7 @@ The `build.gradle` file uses these repositories:
 repositories {
     google()
     mavenCentral()
-    maven { url = 'https://maven.pkg.jetbrains.space/mipt-npm/p/sci/maven' }
+    maven { url = 'https://repo.kotlin.link' }
     maven { url = 'https://jitpack.io' }
 }
 ```
