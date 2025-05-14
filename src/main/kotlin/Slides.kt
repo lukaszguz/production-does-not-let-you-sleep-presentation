@@ -105,6 +105,14 @@ fun main() {
             }
 
             verticalSlides {
+              dslSlide {
+                content {
+                  img {
+                    css
+                    src = "${imgDir}/javeloper.png"
+                  }
+                }
+              }
                 dslSlide {
                     content {
                         h2 { +"Production doesn't let you sleep, a quarter of the fight for a better tomorrow" }
