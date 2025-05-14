@@ -48,6 +48,7 @@ fun main() {
             enableMenu = true
             theme = PresentationTheme.MOON
             slideNumber = "c/t"
+            enableSpeakerNotes = true
 
             menuConfig {
                 numbers = true
